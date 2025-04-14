@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/dist/output.css">
-    <title>Website project template</title>
+    <title>Baumeister Website</title>
 </head>
 <script>
-    const loadComponents = (id, url) =>  {
+    const loadComponents = (id, url, scriptUrl) => {
         fetch(url)
-        .then((response) => response.text())
-        .then((html) => {
-            document.getElementById(id).innerHTML = html;
-        });
-    }
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById(id).innerHTML = html;
 
+                if (scriptUrl) {
+                    const script = document.createElement("script");
+                    script.src = scriptUrl;
+                    script.defer = true;
+                    document.body.appendChild(script);
+                }
+            });
+    };
     window.onload = () => {
-        loadComponents('header', 'src/sections/header.html');
-        loadComponents('hero', 'src/sections/hero.html');
-        loadComponents('contact', 'src/sections/contact.html');
-        loadComponents('footer', 'src/sections/footer.html');
-    }
+        loadComponents('header', 'src/components/header.html', 'src/scripts/header.js');
+        loadComponents('hero', 'src/components/hero.html');
+        loadComponents('about', 'src/components/about.html');
+        loadComponents('services', 'src/components/services.html');
+        loadComponents('references', 'src/components/references.html');
+        loadComponents('contact', 'src/components/contact.html');
+    };
 </script>
-<body>
+
+<body class="bg-background">
     <div id="header"></div>
     <div id="hero"></div>
+    <div id="about" class="relative z-2 pt-12 bg-background"></div>
+    <div id="services"></div>
+    <div id="references"></div>
     <div id="contact"></div>
-    <div id="footer"></div>
 </body>
+
 </html>

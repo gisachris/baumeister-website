@@ -1,0 +1,44 @@
+<div class="font-fit relative">
+  <div class="flex flex-row justify-between w-full p-4  mt-6 lg:flex-row lg:justify-between lg:p-4 lg:mt-0">
+
+    <div class="flex flex-col cursor-pointer text-lg md:text-xl lg:px-6  lg:font-bold">
+      <h2 class="">DE</h2>
+      <h2 class="">EN</h2>
+    </div>
+
+
+    <div>
+      <h1 class="text-3xl font-bold mb-12 md:text-4xl">Baumeister</h1>
+    </div>
+
+
+    <div class="flex text-lg font-bold lg:hidden">
+      <div id="menuIcons">
+        <img id="hamburgerIcon" src="/public/HamburgerMenu.svg" alt="Menu" class="w-8 h-8 cursor-pointer">
+        <img id="closeIcon" src="/public/ExitLogo.svg" alt="Close Menu" class="hidden w-8 h-8 cursor-pointer">
+      </div>
+    </div>
+
+    <div id="menu"
+      class="hidden flex-col list-none items-end lg:flex lg:flex-col lg:list-none lg:items-end lg:px-6 lg:font-bold">
+      <a href="./about.html" class=" text-xl">About</a>
+      <a href="./about.html" class=" text-xl">Services</a>
+      <a href="./about.html" class=" text-xl">References</a>
+      <a href="./about.html" class="text-xl">Contact</a>
+    </div>
+
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden   flex flex-col items-center justify-center text-center  space-y-3  ">
+
+    <button id="closeButton" class="absolute top-5 right-5">
+      <!-- <img src="/public/ExitLogo.svg" alt="Close" class="w-8 h-8"> -->
+    </button>
+
+    <div class=""></div>
+    <a href="./about.html" class="font-fit text-green-900 text-3xl py-4 font-bold ">About</a>
+    <a href="./services.html" class="font-fit text-green-900 text-3xl py-4 font-bold">Services</a>
+    <a href="./references.html" class="font-fit text-green-900 text-3xl py-4 font-bold">References</a>
+    <a href="./contact.html" class="font-fit text-green-900 text-3xl py-4 font-bold">Contact</a>
+  </div>
+</div>
